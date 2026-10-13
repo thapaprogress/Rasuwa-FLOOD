@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-serif: 'Fraunces', 'Newsreader', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FBF9F5;
+    color: #1C241E;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark body {
+    background-color: #111713;
+    color: #EAE6DF;
+  }
+
+  h1, h2, h3, .font-serif-display {
+    font-family: var(--font-serif);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom smooth transitions and typography helpers */
+.font-display {
+  font-family: 'Fraunces', 'Newsreader', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Leaflet map styles customization for dark & light modes */
+.leaflet-container {
+  font-family: var(--font-sans) !important;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: #111713 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(24, 34, 25, 0.95) !important;
+  backdrop-filter: blur(8px) !important;
+  color: #F3EFE8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(24, 34, 25, 0.95) !important;
+}
+
+/* Print optimizations for archival documentation */
+@media print {
+  header, #live-telemetry, button, input[type="range"], .no-print {
+    display: none !important;
+  }
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  section {
+    page-break-inside: avoid;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

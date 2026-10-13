@@ -1,0 +1,8 @@
+{
+  "name": "Rasuwa Flood Emergency & Recovery Report",
+  "description": "Comprehensive interactive emergency impact and recovery report (2024-2026) for Rasuwa District, Nepal. Documenting Trishuli and Bhote Koshi river flash floods, Dunche and Saphrubesi displacements, infrastructure damage points, before-and-after terrain analysis, and rehabilitation strata.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
